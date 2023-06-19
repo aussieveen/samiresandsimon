@@ -1,7 +1,7 @@
 {
-  "name": "sophieandgraham",
+  "name": "samiresandsimon",
   "version": "1.0.0",
-  "description": "Website for Sophie &amp; Graham website",
+  "description": "Website for Samires &amp; Simon website",
   "browserslist": "last 1 version, >1%",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pixely/sophieandgraham.git"
+    "url": "git+https://github.com/aussieveen/samiresandsimon.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pixely/sophieandgraham/issues"
+    "url": "https://github.com/pixely/samiresandsimon/issues"
   },
-  "homepage": "https://github.com/pixely/sophieandgraham#readme",
+  "homepage": "https://github.com/aussieveen/samiresandsimon#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@parcel/optimizer-data-url": "^2.9.2",
