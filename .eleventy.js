@@ -37,7 +37,7 @@ module.exports = function(eleventyConfig) {
   async function imageShortcode(src, alt, sizes = "100vw", widths = "300,600", className = '') {
     if(alt === undefined) {
       // You bet we throw an error on missing alt (alt="" works okay)
-      throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+      alt='';
     }
 
     let metadata = await Image(src, {

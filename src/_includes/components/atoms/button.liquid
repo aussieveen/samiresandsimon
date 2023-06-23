@@ -1,6 +1,6 @@
 <button
     class="button {{ class }}"
-    type="{% if type %}{{ type }}{% elsif %}submit{% endif %}"
+    type="{% if type %}{{ type }}{% else %}submit{% endif %}"
     {% if disabled %}disabled{% endif %}
 >
     {{- text -}}

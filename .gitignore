@@ -107,3 +107,8 @@ _site/
 
 # Local Netlify folder
 .netlify
+
+# Src backup
+src_back/
+
+.idea/
