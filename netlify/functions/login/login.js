@@ -9,6 +9,7 @@ const handler = async (event) => {
     let id = null;
 
     if (inviteCode ) {
+      console.log(process.env.AIRTABLE_API_KEY);
       const airtableData = new AirTable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE);
       const inviteList = await airtableData("Invite List").select({
         view: "Grid view",
