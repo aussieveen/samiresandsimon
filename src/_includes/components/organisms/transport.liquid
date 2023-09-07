@@ -1,0 +1,4 @@
+{% capture transport_url %}{{ "/" | append: invite['Invite Code'] | append: "/transport" | parseUrl: page.lang }}{% endcapture %}
+<div class="text-content text-content--centered">
+    {{ languages[page.lang].components.organisms.transport.details }}{{ transport_url }}{{ languages[page.lang].components.organisms.transport.details2 }}
+</div>

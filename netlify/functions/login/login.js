@@ -7,13 +7,13 @@ const handler = async (event) => {
     const inviteCode = event.queryStringParameters.invite;
     let valid = false;
     let id = null;
-
     if (inviteCode ) {
-      console.log(process.env.AIRTABLE_API_KEY);
+
       const airtableData = new AirTable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE);
+      const data = await airtableData("Invite List")
       const inviteList = await airtableData("Invite List").select({
         view: "Grid view",
-        filterByFormula: `{Invite Code} = "${inviteCode.toUpperCase().trim()}"`,
+        filterByFormula: `{Invite Code} = "${inviteCode.trim()}"`,
         maxRecords: 1,
       }).all();
       if (inviteList.length === 1) {

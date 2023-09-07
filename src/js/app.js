@@ -1,7 +1,6 @@
 import '../sass/app.scss';
 
 const dynamicModules = [...document.querySelectorAll('[data-module]')].map((module) => module.dataset.module);
-
 if (dynamicModules.includes('countdown')) {
     import("./modules/countdown").then(function (countdown) {
         countdown.init();
@@ -29,6 +28,12 @@ if (dynamicModules.includes('message')) {
 if (dynamicModules.includes('gifting')) {
     import("./modules/gifting").then(function (gifting) {
         gifting.init();
+    });
+}
+
+if (dynamicModules.includes('translate')) {
+    import("./modules/translate").then(function (translate) {
+        translate.init();
     });
 }
 

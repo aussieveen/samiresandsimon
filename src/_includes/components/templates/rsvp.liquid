@@ -1,5 +1,4 @@
 {% layout 'components/templates/default' %}
-
 {% block content %}
   <form class="form js-rsvp-form" action="/{{ invite['Invite Code'] }}/thank-you/" data-module="rsvp">
     
@@ -7,10 +6,14 @@
     <input type="hidden" name="guests" value="{{ invite['Invitees'] | join: ',' }}" />
   
     <div class="form__title">
-      <h1 class="heading-2">RVSP</h1>
+      <h1 class="heading-2">
+        {{ languages[page.lang].components.templates.rsvp.title }}
+      </h1>
     </div>
     <div class="form__subtitle">
-      <h2 class="heading-4">We really hope you're able to celebrate with us!</h2>
+      <h2 class="heading-4">
+        {{ languages[page.lang].components.templates.rsvp.hopeyoucancome }}
+      </h2>
     </div>
       <div class="form__section">
         {% for person in invite.people %}
@@ -23,13 +26,15 @@
           {% if person['Plus1'] == true %}
           <fieldset class="form__fieldset js-guest-select is-hidden">
               <div class="form__fieldset-title">
-                <h3 class="heading-3">Your guest</h3>
+                <h3 class="heading-3">
+                  {{ languages[page.lang].components.templates.rsvp.yourguest }}
+                </h3>
               </div>
               <div class="form__field">
                 {% render "components/atoms/checkbox", 
                   name: field_name, 
                   id: field_yes, 
-                  label: "I will be bringing a guest",
+                  text: languages[page.lang].components.templates.rsvp.bringingaguest,
                   checked: field_confirmed_yes
                 %}
               </div>
@@ -37,7 +42,7 @@
                 {% render "components/atoms/checkbox", 
                   name: field_name, 
                   id: field_no, 
-                  label: "I won't be bringing a guest",
+                  text: languages[page.lang].components.templates.rsvp.notbringingaguest,
                   checked: field_confirmed_no 
                 %}
               </div>
@@ -45,21 +50,23 @@
             {% else %}
             <fieldset class="form__fieldset js-rsvp-select">
               <div class="form__fieldset-title">
-                <h3 class="heading-3">{{ person['Name'] }}'s RSVP</h3>
+                <h3 class="heading-3">
+                  {{ person['Name'] }}'s {{ languages[page.lang].components.templates.rsvp.title }}
+                </h3>
               </div>
               <div class="form__field">
                 {% render "components/atoms/checkbox", 
                   name: field_name, 
                   id: field_yes, 
-                  label: "Gladly Accept",
+                  label: languages[page.lang].components.templates.rsvp.gladlyaccept,
                   checked: field_confirmed_yes
                 %}
               </div>
               <div class="form__field">
                 {% render "components/atoms/checkbox", 
                   name: field_name, 
-                  id: field_no, 
-                  label: "Regretfully Decline",
+                  id: field_no,
+                  label: languages[page.lang].components.templates.rsvp.regretfullydecline,
                   checked: field_confirmed_no 
                 %}
               </div>
@@ -72,25 +79,28 @@
                 {% capture field_guest_name %}{{person.id}}-name{% endcapture %}
                 {% capture field_guest_id %}guest-{{person.id}}{% endcapture %}
                 <div class="form__fieldset-title">
-                  <label class="heading-3" for="{{ field_guest_id }}">Your guest's full name</label>
-                </div>
-                <div class="form__field">
-                  {% render "components/atoms/text-input", 
-                    name: field_guest_name, 
-                    id: field_guest_id,
-                    class: 'js-guest-name-input'
-                  %}
-                  <p class="form__validation">All guests must be over 18</p>
+                  <label class="heading-3" for="{{ field_guest_id }}">
+                    {{ languages[page.lang].components.templates.rsvp.guestsname }}
+                  </label>
                 </div>
             </fieldset>
             {% endif %}
         {% endfor %}
       </div>
 
-      {% render "components/atoms/button", text: "Continue", type: "button", disabled: true, class: 'js-continue' %}
+      {% render "components/atoms/button",
+              text: languages[page.lang].components.templates.rsvp.continue,
+              type: "button",
+              disabled: true,
+              class: 'js-continue'
+      %}
 
-      <p class="form__validation js-validation-1 is-hidden">Please select your RSVP to continue</p>
-      <p class="form__validation js-validation-2 is-hidden">Please enter your guest's name to continue</p>
+      <p class="form__validation js-validation-1 is-hidden">
+        {{ languages[page.lang].components.templates.rsvp.rsvptocontinue }}
+      </p>
+      <p class="form__validation js-validation-2 is-hidden">
+        {{ languages[page.lang].components.templates.rsvp.guestnametocontinue }}
+      </p>
 
       <div class="is-hidden js-meal-choices">
 
@@ -99,11 +109,7 @@
           {% render "components/atoms/section-break" %}
           <div class="form__subtitle">
             <h2 class="heading-2">
-              {% if invite['Invite Type'] == 'Day' %}
-                Your meal choice
-              {% else %}
-                Your dietary requirements
-              {% endif %}
+              {{ languages[page.lang].components.templates.rsvp.dietaryrequirements }}
             </h2>
           </div>
 
@@ -114,53 +120,17 @@
           {% for person in invite.people %}
 
             <div class="js-meal-{{ person.id }}-attend">
-              <fieldset class="form__fieldset js-meal-select">
-
-                {% if invite['Invite Type'] == 'Day' %}
-                  {% capture field_name %}{{person.id}}-meal{% endcapture %}
-                  {% capture field_yes %}{{person.id}}-yes{% endcapture %}
-                  {% capture field_no %}{{person.id}}-no{% endcapture %}
-
-                  <div class="form__fieldset-title">
-                    <h3 class="heading-3">{{ person['Name'] }}'s Meal</h3>
-                  </div>
-
-                  {% for meal in menu %}
-                    {% capture field_name %}{{person.id}}-meal{% endcapture %}
-                    {% capture field_id %}{{person.id}}-{{meal.id}}{% endcapture %}
-                    {% assign menu_choice = person['Menu Choice'] %}
-                    {% assign menu_id = meal['id'] %}
-                    {% capture field_selected %}{% if menu_choice contains menu_id %}true{% else %}false{% endif %}{% endcapture %}
-                   
-                    <div class="form__field">
-                      {% render "components/atoms/checkbox", 
-                        name: field_name, 
-                        id: field_id, 
-                        label: meal['Description'],
-                        checked: field_selected
-                      %}
-                    </div>
-                  {% endfor %}
-                {% endif %}
-
-              </fieldset>
-
+              <div class="form__fieldset-title">
+              <h3 class="heading-3">{{ person['Name'] }}'s {{ languages[page.lang].components.templates.rsvp.lcdietaryrequirements }}</h3>
+                </div>
               <fieldset class="form__fieldset{% if person['Plus1'] == true %} js-guest-meal-select{% endif %}">
-
-                {% if invite['Invite Type'] == 'Evening' %}
-                  <div class="form__fieldset-title">
-                    <h3 class="heading-3"><span class="js-name-inline" data-id="guest-{{ person.id }}">{{ person['Name'] }}</span>'s Dietery Requirements</h3>
-                  </div>
-                {% endif %}
-
                 {% capture field_name %}{{person.id}}-dietary{% endcapture %}
                 {% render 
                   "components/atoms/textarea", 
                   name: field_name, 
-                  label: "Please let us know if you have any dietary requirements or allergies" 
-                  value: person['Dietary Requirements'],
+                  text: languages[page.lang].components.templates.rsvp.letknowdietaryrequirements,
+                  value: person['Dietary Requirements']
                 %}
-              
               </fieldset>
             </div>
           
@@ -168,13 +138,15 @@
         
         </div>
   
-        {% render "components/atoms/button", text: "Confirm choices" disabled: true, class: 'js-confirm' %}
-
-        <p class="form__validation js-validation-3 is-hidden">Please select your meal choices</p>
+        {% render "components/atoms/button",
+                text: languages[page.lang].components.templates.rsvp.continue,
+                disabled: true,
+                class: 'js-confirm'
+        %}
 
         <div class="form__validation js-rsvp-error is-hidden">
-          <h3 class="heading-4">Uh oh, something went wrong</h3>
-          <p>Please try again, or <a href="/contact">contact us</a> if you still can't RSVP</p>
+          <h3 class="heading-4">{{ languages[page.lang].components.templates.rsvp.uhoh }}</h3>
+          <p>{{ languages[page.lang].components.templates.rsvp.pleasetryagain }}</p>
         </div>
 
       </div>

@@ -8,9 +8,17 @@ export function init() {
 
     messageForm.addEventListener('submit', (event) => {
         event.preventDefault();
-    
+
         hide(messageError);
-        messageSubmit.innerHTML = "Sending...";
+
+        const currentUrl = window.location.href;
+        let lang = '';
+        if(currentUrl.includes('/pt/')){
+            lang = 'pt/';
+            messageSubmit.innerHTML = "Enviando...";
+        }else{
+            messageSubmit.innerHTML = "Sending...";
+        }
 
         const formData = new FormData(messageForm);
         const plainFormData = Object.fromEntries(formData.entries());
@@ -27,10 +35,8 @@ export function init() {
         fetch('/.netlify/functions/message', fetchOptions)
             .then((response) => response.json())
             .then((data) => {
-                console.log('data', data);
                 if (data.success === true) {
-                    console.log('success');
-                    window.location.replace(messageForm.action); 
+                    window.location.replace(messageForm.action + lang);
                 } else {
                     show(messageError);
                 }
@@ -39,7 +45,6 @@ export function init() {
             .catch((error) => {
                 show(messageError);
                 messageSubmit.innerHTML = originalButtonText;
-                console.error(error);
             });
     });
 }

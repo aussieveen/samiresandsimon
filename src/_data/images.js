@@ -8,12 +8,6 @@ module.exports = async function () {
         urlPath: "/images/",
     };
 
-    // const images = [{
-    //     name: "sophie-graham",
-    //     url: "./src/assets/sophie-graham.jpg",
-    //     widths: [300],
-    // }];
-
     const images = [];
 
     const resized = {};

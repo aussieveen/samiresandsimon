@@ -8,6 +8,7 @@ body {
   font-weight: $font-body-weight;
   font-style: $font-body-style;
   text-transform: $font-body-transform;
+  padding-top:50px;
 }
 
 h1,
@@ -89,7 +90,8 @@ h6,
 }
 
 p {
-  margin: 0;
+  margin: 0 0 10px;
+  font-size: 1.2rem;
 }
 
 small,

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ page.lang }}">
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"> 
@@ -30,6 +30,16 @@
 
 <body>
     <div class="container">
+        {% assign lang = "unknown" %}
+        {% if invite.Language %}
+            {% assign lang = invite.Language %}
+        {% endif %}
+        {% assign isEn = lang == 'en' or lang =='unknown' %}
+        {% assign isPt = lang == 'pt' %}
+        {% if invite.Language %}
+            {% assign lang = invite.Language %}
+        {% endif %}
+        {% comment %}{% render "components/organisms/translate"%}{% endcomment %}
         {% block content %}{% endblock %}
     </div>
     {% include "components/molecules/curved-foliage" %}

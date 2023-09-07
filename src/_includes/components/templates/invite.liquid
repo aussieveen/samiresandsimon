@@ -7,28 +7,36 @@
 {% assign widths = "210,420,630,840" %}
 
 {% block content %}
-
 <div class="overview" data-module="check-saved" data-id="{{ invite['Invite Code'] }}">
-
-  {% render "components/organisms/invite-header" invite: invite %}  
+  {% render "components/organisms/invite-header",
+          invite: invite,
+          languages: languages,
+          page: page
+  %}
 
   {% render "components/atoms/section-break" %}
 
   <!-- WHERE & WHEN -->
   <div class="overview__section">
     <div class="overview__section-image">
-      {% render "components/atoms/image-hex", 
-          url: "./src/assets/images/stratton-court-barn-1.jpg", 
-          alt: "Courtyard at Stratton Court Barn our wedding venue"
+      {% render "components/atoms/image-bordered",
+          url: "./src/assets/images/porterhouse.jpeg",
+          alt: "",
           sizes: sizes,
-          widths: widths,
+          widths: widths
       %}
     </div>
     <div class="overview__section-title">
-      <h2 class="heading-2">Where & When</h2>
+      <h2 class="heading-2">
+        {{ languages[page.lang].components.templates.invite.whereandwhen }}
+      </h2>
     </div>
     <div class="overview__section-content">
-      {% render "components/organisms/where-and-when" inviteType: invite['Invite Type'] %}
+      {% render "components/organisms/where-and-when",
+          inviteType: invite['Invite Type'],
+          languages: languages,
+          page: page
+      %}
     </div>
   </div>
 
@@ -36,19 +44,17 @@
 
   <!-- ORDER OF THE DAY -->
   <div class="overview__section">
-    <div class="overview__section-image">
-        {% render "components/atoms/image-hex", 
-          url: "./src/assets/images/stratton-court-barn-3.jpg", 
-          alt: "Courtyard at Stratton Court Barn our wedding venue"
-          sizes: sizes,
-          widths: widths
-        %}
-    </div>
     <div class="overview__section-title">
-      <h2 class="heading-2">Order of the {{ invite['Invite Type'] }}</h2>
+      <h2 class="heading-2">
+        {{ languages[page.lang].components.templates.invite.orderofevents }}
+      </h2>
     </div>
     <div class="overview__section-content">
-      {% render "components/organisms/order-of-the-day" inviteType: invite['Invite Type'] %}
+      {% render "components/organisms/order-of-the-day",
+              inviteType: invite['Invite Type'],
+              languages: languages,
+              page: page
+      %}
     </div>
   </div>
 
@@ -57,18 +63,23 @@
   <!-- OUR STORY -->
   <div class="overview__section">
     <div class="overview__section-image">
-      {% render "components/atoms/image-hex", 
-        url: "./src/assets/images/sophie-graham.jpg",
-        alt: "Graham & Sophie walking in Oxford",
+      {% render "components/atoms/image-bordered",
+        url: "./src/assets/images/brazilwaterfalll.jpeg",
+        alt: "prewedding",
         sizes: sizes,
         widths: widths 
       %}
     </div>
     <div class="overview__section-title">
-      <h2 class="heading-2">Our Story</h2>
+      <h2 class="heading-2">
+        {{ languages[page.lang].components.templates.invite.ourstory }}
+      </h2>
     </div>
     <div class="overview__section-content">
-      {% render "components/organisms/our-story" %}
+      {% render "components/organisms/our-story",
+              languages: languages,
+              page: page
+      %}
     </div>
   </div>
 
@@ -77,18 +88,22 @@
   <!-- TRANSPORT & ACCOMODATION -->
   <div class="overview__section">
     <div class="overview__section-image">
-      {% render "components/atoms/image-hex", 
-        url: "./src/assets/images/sophie-graham-alt.jpg",
-        alt: "Graham & Sophie sitting in Oxford",
-        sizes: sizes,
-        widths: widths 
+      {% render "components/atoms/image-bordered",
+              url: "./src/assets/images/londonbus.png",
+              alt: "prewedding",
+              sizes: sizes,
+              widths: widths
       %}
     </div>
     <div class="overview__section-title">
-      <h2 class="heading-2">Transport & Accomodation</h2>
+      <h2 class="heading-2">{{ languages[page.lang].components.templates.invite.transportandaccommodation }} </h2>
     </div>
     <div class="overview__section-content">
-      {% render "components/organisms/transport-and-accomodation" %}
+      {% render "components/organisms/transport",
+              invite: invite,
+              languages: languages,
+              page: page
+      %}
     </div>
   </div>
 
@@ -97,18 +112,23 @@
   <!-- GIFTING -->
   <div class="overview__section">
     <div class="overview__section-image">
-      {% render "components/atoms/image-hex", 
-        url: "./src/assets/images/sophie-graham-3.png",
-        alt: "Sophie & Graham in Oxford",
-        sizes: sizes,
-        widths: widths 
+      {% render "components/atoms/image-bordered",
+              url: "./src/assets/images/broncos.png",
+              alt: "prewedding",
+              sizes: sizes,
+              widths: widths
       %}
     </div>
     <div class="overview__section-title">
-      <h2 class="heading-2">Gifting</h2>
+      <h2 class="heading-2">
+        {{ languages[page.lang].components.templates.invite.gifting }}
+      </h2>
     </div>
     <div class="overview__section-content">
-      {% render "components/organisms/gifting" %}
+      {% render "components/organisms/gifting",
+              languages: languages,
+              page: page
+      %}
     </div>
   </div>
 
@@ -117,10 +137,16 @@
   <!-- FAQ -->
   <div class="overview__section">
     <div class="overview__section-title">
-      <h2 class="heading-2">FAQs</h2>
+      <h2 class="heading-2">
+        {{ languages[page.lang].components.templates.invite.faqs }}
+      </h2>
     </div>
     <div class="overview__section-content">
-      {% render "components/organisms/faq" invite: invite %}
+      {% render "components/organisms/faq",
+              invite: invite,
+              languages: languages,
+              page: page
+      %}
     </div>
   </div>
 

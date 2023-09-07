@@ -1,7 +1,7 @@
 {% layout 'components/templates/default' %}
 
 {% block content %}
-    {% capture rsvpAddress %}/{{ invite['Invite Code'] }}{% endcapture %}
+    {% capture rsvpAddress %}{{ '/' | append: invite['Invite Code'] | parseUrl: page.lang }}{% endcapture %}
     <div class="page">
         <div class="page__header">
             {% include "components/molecules/hero-heading" %}
@@ -9,25 +9,31 @@
 
         <div class="text-content text-content--centered">
             <h3 class="heading-2">
-                Thank you 
+                {{ languages[page.lang].components.templates.rsvpcomplete.thankyou }}
+                {%- for person in invite.people %}
+                    {%- if forloop.last == false and forloop.rindex > 2 %}, {% endif -%}
+                {%- endfor -%}
                 {% for person in invite.people %}
                             {% if forloop.last and forloop.length > 1 %} &amp; {% endif %}
                         {{- person['Name'] -}}
                     {% if forloop.last == false and forloop.rindex > 2 %}, {% endif %}
                     {%- if forloop.last %} {% endif -%}
                 {%- endfor -%}
-                for submitting your RSVP!
+                {{ languages[page.lang].components.templates.rsvpcomplete.forsubmitting }}
             </h3>
-            <p>Please bookmark your invite page <a href="{{ rsvpAddress }}">sophieandgraham.co.uk{{ rsvpAddress}}</a> and check back for full details of the day.</p>
+            <p>{{ languages[page.lang].components.templates.rsvpcomplete.bookmark1 }} <a href="{{ rsvpAddress }}">samiresandsimon.co.uk{{ rsvpAddress }}</a>
+                {{ languages[page.lang].components.templates.rsvpcomplete.bookmark2 }}</p>
         </div>
 
         <div class="text-content__cta">
             
-            {% render "components/atoms/call-to-action-primary"
+            {% render "components/atoms/call-to-action-primary",
                 url: rsvpAddress,
-                text: "Return to your invite"
+                text: "Return to your invite",
+                textPt: "Retorne ao seu convite",
+                isEn: isEn,
+                isPt: isPt
             %}
         </div>
     </div>
-
 {% endblock %}

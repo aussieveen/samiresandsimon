@@ -1,20 +1,43 @@
 {% layout 'components/templates/default' %}
-
+{{ invite }}
 {% block content %}
   <form class="form js-message-form" action="/{{ invite['Invite Code'] }}/rsvp/complete" data-module="message">
     <input type="hidden" name="invite" value="{{ invite.id }}" />
     <input type="hidden" name="form-name" value="thank-you" />
     <div class="form__title">
-      <h1 class="heading-2">Thank you{% if type != "no" %}!{% endif %}</h1>
+      <h1 class="heading-2">
+        {{ languages[page.lang].components.templates.rsvpthankyou.thankyou }}{% if type != "no" %}!{% endif %}
+      </h1>
     </div>
     <div class="form__subtitle">
-      <h2 class="heading-4">{{ message }}</h2>
+      <p>
+        {% if type != "no" %}
+          {{ languages[page.lang].components.templates.rsvpthankyou.messageyes }}
+        {% else %}
+          {{ languages[page.lang].components.templates.rsvpthankyou.messageno }}
+        {% endif %}
+      </p>
     </div>
+    {% if type != "no" %}
+    <p>
+      {{ languages[page.lang].components.templates.rsvpthankyou.aboveform }}
+    </p>
     <div class="form__section">
-        {% render "components/atoms/textarea", name: "message", label: "Leave a message" %}       
+        {% render "components/atoms/textarea",
+                name: "message",
+                text: "Leave a message",
+                textPt: "Deixe uma mensagem",
+                isEn: isEn,
+                isPt: isPt
+        %}
     </div>
-
-    {% render "components/atoms/button", text: "Finish" class: "js-message-submit" %}
+    {% endif %}
+    {% render "components/atoms/button",
+            text: "Finish",
+            textPt: "Terminar",
+            isEn: isEn,
+            isPt: isPt,
+            class: "js-message-submit" %}
 
     <div class="form__validation js-message-error is-hidden">
       <h3 class="heading-4">Uh oh, something went wrong</h3>

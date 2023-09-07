@@ -1,0 +1,50 @@
+{% layout 'components/templates/default' %}
+
+{% block content %}
+
+    <div class="page">
+        <div class="page__header">
+            <h2 class="heading-2">
+                {{ languages[page.lang].components.pages.transport.title }}
+            </h2>
+        </div>
+
+        <div class="text-content text-content--centered">
+            {% if invite['Invite Type'] == "Day" %}
+            <h3 class="heading-3">
+                {{ languages[page.lang].components.pages.transport.ceremony }}
+            </h3>
+            <p>Chelsea Old Town Hall</p>
+            <p>King's Rd, Chelsea, London SW3 5EB</p>
+            <p>
+               {{ languages[page.lang].components.pages.transport.ceremonytube }}
+            </p>
+            <p>Bus: 11, 19, 22, 49, 211, 319</p>
+            {% endif %}
+            <h3 class="heading-3">
+                {{ languages[page.lang].components.pages.transport.reception }}
+            </h3>
+            <p>The Little Yellow Door</p>
+            <p>6-8 All Saints Rd, Notting Hill, London W11 1HH</p>
+            <p>
+                {{ languages[page.lang].components.pages.transport.receptiontube }}
+            </p>
+            <p>Bus: 7, 23, 52, 70, 228, 295, 316, 452</p>
+            {% if invite['Invite Type'] == "Day" %}
+                <h4>
+                    {{ languages[page.lang].components.pages.transport.gettingfromceremonytoreception }}
+                </h4>
+                <p>
+                    {{ languages[page.lang].components.pages.transport.bybus }}
+                </p>
+                <ul>
+                    {{ languages[page.lang].components.pages.transport.bybusdetails }}
+                </ul>
+                <p>
+                    {{ languages[page.lang].components.pages.transport.uber }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

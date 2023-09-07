@@ -35,13 +35,19 @@ export function init() {
         
         const queryParams = { invite: loginInput.value };
 
-        loginButton.innerHTML = "Checking...";
-
+        const currentUrl = window.location.href;
+        let lang = '';
+        if(currentUrl.includes('/pt/')){
+            lang = '/pt';
+            loginButton.innerHTML = "Verificando...";
+        }else{
+            loginButton.innerHTML = "Checking...";
+        }
         fetch(`/.netlify/functions/login?${new URLSearchParams(queryParams).toString()}`)
             .then((response) => response.json())
             .then((data) => {
                 if (data.inviteFound === true && data.inviteCode) {
-                    window.location.replace(`/${data.inviteCode}/`); 
+                    window.location.replace(`${lang}/${data.inviteCode}/`);
                 } else {
                     resetState();
                     hide(loginForgotten);

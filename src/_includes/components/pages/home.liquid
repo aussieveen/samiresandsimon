@@ -1,7 +1,9 @@
 {% layout 'components/templates/default' %}
 
 {% block content %}
-
-    {% render "components/organisms/invite-header" %}
+    {% render "components/organisms/invite-header",
+        languages: languages,
+        page: page
+    %}
 
 {% endblock %}

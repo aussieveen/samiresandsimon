@@ -59,5 +59,3 @@ module.exports = async function () {
     // console.log('final', finalList);
     return finalList;
 };
-
-

@@ -7,7 +7,7 @@
 
     <div class="gift-card__image">
         {% capture imageUrl %}./src/assets/images/{{ gift['Image Name'] }}{% endcapture %}
-        {% render "components/atoms/image-hex", 
+        {% render "components/atoms/image-bordered",
             url: imageUrl,
             alt: gift['Name'],
             sizes: sizes,

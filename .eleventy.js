@@ -1,6 +1,7 @@
 // const tinyHTML = require('@sardine/eleventy-plugin-tinyhtml');
 const Image = require("@11ty/eleventy-img");
 const { readFileSync } = require('fs');
+const { EleventyI18nPlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
@@ -32,9 +33,27 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/assets/favicons": "/" });
 
+  // eleventyConfig.addPlugin(i18n, {
+  //   translations: {
+  //     hello: {
+  //       'en-GB': 'Hello there',
+  //       'pt-PT': 'Oi there'
+  //     }
+  //   },
+  //   fallbackLocales: {
+  //     'en-GB': 'pt-PT'
+  //   }
+  // });
+
+  eleventyConfig.addPlugin(EleventyI18nPlugin, {
+    defaultLanguage: "en", // Required
+    errorMode: "allow-fallback"
+  });
+
   // eleventyConfig.addPlugin(tinyHTML);
+
   
-  async function imageShortcode(src, alt, sizes = "100vw", widths = "300,600", className = '') {
+  async function imageShortcode(src, alt, sizes = "100vw", widths = "320", className = '') {
     if(alt === undefined) {
       // You bet we throw an error on missing alt (alt="" works okay)
       alt='';
@@ -67,6 +86,12 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
   eleventyConfig.addLiquidShortcode("image", imageShortcode);
+  eleventyConfig.addLiquidFilter("parseUrl", function(value, language) {
+    if(language !== 'en') {
+      value = "/" + language + value;
+    }
+    return value;
+  });
   eleventyConfig.addJavaScriptFunction("image", imageShortcode);
 
   return {

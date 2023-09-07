@@ -206,13 +206,19 @@ export function init() {
         hide(rsvpError);
 
         confirmButton.dataset.originalText = confirmButton.innerHTML;
-        confirmButton.innerHTML = "Checking...";
+        let cookie = document.cookie;
+        if (cookie === 'lang=en') {
+            confirmButton.innerHTML = "Checking...";
+        }
+        if (cookie === 'lang=pt') {
+            confirmButton.innerHTML = "Verificando...";
+        }
 
         const formData = new FormData(rsvpForm);
         
 
         const plainFormData = Object.fromEntries(formData.entries());
-        console.log(plainFormData);
+
 
         const fetchOptions = {
             method: 'POST',
@@ -227,9 +233,14 @@ export function init() {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
+                const currentUrl = window.location.href;
+                let lang = '';
+                if(currentUrl.includes('/pt/')){
+                    lang = '/pt';
+                }
                 if (data.success === true && data.type) {
                     setSuccessCookie(data.inviteCode);
-                    window.location.replace(`/${data.inviteCode}/thank-you/${data.type}/`); 
+                    window.location.replace(`${lang}/${data.inviteCode}/thank-you/${data.type}/`);
                 } else {
                     showFormError();
                 }
