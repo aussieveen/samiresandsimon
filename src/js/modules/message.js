@@ -36,7 +36,7 @@ export function init() {
             .then((response) => response.json())
             .then((data) => {
                 if (data.success === true) {
-                    window.location.replace(messageForm.action + lang);
+                    window.location.replace(messageForm.action);
                 } else {
                     show(messageError);
                 }

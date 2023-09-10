@@ -1,7 +1,6 @@
 {% layout 'components/templates/default' %}
-{{ invite }}
 {% block content %}
-  <form class="form js-message-form" action="/{{ invite['Invite Code'] }}/rsvp/complete" data-module="message">
+  <form class="form js-message-form" action="{% if page.lang == 'pt' %}/pt{% endif %}/{{ invite['Invite Code'] }}/rsvp/complete" data-module="message">
     <input type="hidden" name="invite" value="{{ invite.id }}" />
     <input type="hidden" name="form-name" value="thank-you" />
     <div class="form__title">
@@ -33,10 +32,7 @@
     </div>
     {% endif %}
     {% render "components/atoms/button",
-            text: "Finish",
-            textPt: "Terminar",
-            isEn: isEn,
-            isPt: isPt,
+            text: languages[page.lang].components.templates.rsvpthankyou.finish,
             class: "js-message-submit" %}
 
     <div class="form__validation js-message-error is-hidden">

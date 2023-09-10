@@ -42,10 +42,12 @@ if (dynamicModules.includes('check-saved')) {
         .split('; ')
         .find((row) => row.startsWith('saved='))
         ?.split('=')[1];
+    console.log(cookieValue)
     if (document.querySelector(`[data-id="${cookieValue}"]`)) {
+        console.log('found');
         const rsvpButton = document.querySelector('.js-rsvp');
         const rsvpText = document.querySelector('.js-rsvp-text');
-        rsvpButton?.innerHTML = "Update your RSVP";
+        rsvpButton?.innerHTML = rsvpButton?.innerHTML + "?";
         rsvpText?.innerHTML = rsvpText.dataset?.alt;
     }
 }

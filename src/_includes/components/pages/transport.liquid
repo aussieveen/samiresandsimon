@@ -19,7 +19,7 @@
             <p>
                {{ languages[page.lang].components.pages.transport.ceremonytube }}
             </p>
-            <p>Bus: 11, 19, 22, 49, 211, 319</p>
+            <p>{{ languages[page.lang].components.pages.transport.bus }}: 11, 19, 22, 49, 211, 319</p>
             {% endif %}
             <h3 class="heading-3">
                 {{ languages[page.lang].components.pages.transport.reception }}
@@ -29,11 +29,11 @@
             <p>
                 {{ languages[page.lang].components.pages.transport.receptiontube }}
             </p>
-            <p>Bus: 7, 23, 52, 70, 228, 295, 316, 452</p>
+            <p>{{ languages[page.lang].components.pages.transport.bus }}: 7, 23, 52, 70, 228, 295, 316, 452</p>
             {% if invite['Invite Type'] == "Day" %}
-                <h4>
+                <h3 class="heading-3">
                     {{ languages[page.lang].components.pages.transport.gettingfromceremonytoreception }}
-                </h4>
+                </h3>
                 <p>
                     {{ languages[page.lang].components.pages.transport.bybus }}
                 </p>

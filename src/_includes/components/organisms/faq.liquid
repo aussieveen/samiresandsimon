@@ -6,7 +6,7 @@
     </summary>
     <div class="expand__contents">
         <p>
-            {% capture message %}<a href="{{ rsvp_url }}">{{ languages[page.lang].components.organisms.faq.rsvp.answer }}{{ invite.formatted_deadline_with_year }} {% endcapture %}
+            {% capture message %}<a href="{{ rsvp_url }}">{{ languages[page.lang].components.organisms.faq.rsvp.answer }}{{ languages[page.lang].components.organisms.inviteheader.rsvpby }} {% endcapture %}
             {{ message }}
         </p>
     </div>

@@ -20,13 +20,13 @@ module.exports = {
                     arrive: {
                         question: "When should I arrive?",
                         answer: {
-                            Day: "Please arrive between 2:15-2.45pm as the ceremony will begin at begin promptly at 3pm.",
+                            Day: "Please arrive between 2:30-2.45pm as the ceremony will begin at begin promptly at 3pm.",
                             Evening: "Please arrive from 5pm."
                         }
                     },
                     rsvp: {
                         question: "When do I need to RSVP by?",
-                        answer: "RSVP here</a> using the form on our website by the"
+                        answer: "RSVP here</a> using the form on our website by the "
                     },
                     transport:                         {
                         question: "Getting to the venue",
@@ -89,9 +89,10 @@ module.exports = {
                     thankyouforupdatingyourrsvp: 'Thank you for submitting your RSVP. Please <a href="/contact">send us a message</a> if you need to make any changes.',
                     updateyourrsvp: 'Update your RSVP',
                     youcanupdateyourrsvipuntil: 'You can update your RSVP until',
+                    rsvpby: "31st March 2024"
                 },
                 ourstory: {
-                    story: "<p>Samires and Simon met the modern way, online and had their first date on 3rd June 2017 at The Porterhouse in Covent Garden. It wasn't the most fancy dates given it was pints and Samires' enjoying a Five Guys burger (which are massive and sloppy) for the first time. We enjoyed ourselves so much that we didn't realise that 5 hours had passed.</p> <p>Simon popped the question during their first trip to Brazil together on 25th September 2022. Samires' knew the proposal was coming during the trip but was still surprised, especially since he spoke in very broken portugese. He also managed to pick a beautiful spot by a waterfall in Itacare.</p> <p>On our 7th year anniversary, we will be tying the knot and we cannot wait to share our special day with you.</p>"
+                    story: "<p>Samires and Simon met the modern way, online and had their first date on 3rd June 2017 at The Porterhouse in Covent Garden. It wasn't the most fancy dates given it was pints and Samires' enjoying a Five Guys burger (which are massive and sloppy) for the first time. We enjoyed ourselves so much that we didn't realise that 5 hours had passed.</p> <p>After over five years together, Simon popped the question during their first trip to Brazil together on 25th September 2022. Samires' knew the proposal was coming during the trip but was still surprised, especially since he spoke in very broken portugese. He also managed to pick a beautiful spot by a waterfall in Itacare.</p> <p>On our 7th year anniversary, we will be tying the knot and we cannot wait to share our special day with you.</p>"
                 },
                 orderoftheday: {
                     ceremony: "Ceremony",
@@ -191,6 +192,7 @@ module.exports = {
                     receptiontube: "Nearest Tube: Westbourne Park (Circle, Hammersmith &amp; City lines)",
                     gettingfromceremonytoreception: "Getting from the ceremony to the reception",
                     bybus: "By Bus",
+                    bus: "Bus",
                     bybusdetails: "<li>Take Bus 49 from Sydney Street Chelsea Old Town Hall (Stop KH) to Queensberry Place</li> <li>Take Bus 70 from Queensberry Place (Stop V) to Powis Gardens</li><li>Walk to The Little Yellow Door</li>",
                     uber: "Uber (Estimated Cost: £10-15)"
                 }
@@ -201,12 +203,13 @@ module.exports = {
                     gifting: 'Gifting',
                     orderofevents: 'Order of Events',
                     ourstory: 'Our Story',
-                    transportandaccommodation: 'Transport &amp; Accommodation',
+                    transportandaccommodation: 'Transport',
                     whereandwhen: 'Where &amp; When',
                 },
                 rsvp: {
                     hopeyoucancome: "We really hope you're able to celebrate with us!",
                     title: "RSVP",
+                    confirmattendance: "RSVP",
                     yourguest: "Your guest",
                     bringingaguest: "I will be bringing a guest",
                     notbringingaguest: "I won't be bringing a guest",
@@ -217,7 +220,8 @@ module.exports = {
                     rsvptocontinue: "Please select your RSVP to continue",
                     guestnametocontinue: "Please enter your guest's full name to continue",
                     dietaryrequirements: "Dietary requirements",
-                    lcdietaryrequirements: "dietary requirements",
+                    lcdietaryrequirementsen: "dietary requirements",
+                    lcdietaryrequirementspt: "",
                     letknowdietaryrequirements: "Please let us know if you have any dietary requirements or allergies",
                     confirm: "Confirm",
                     uhoh: "Uh oh, something went wrong",
@@ -235,6 +239,7 @@ module.exports = {
                     messageyes: "We're so excited you'll be celebrating our special day with us!",
                     messageno: "We're sorry you're unable to to celebrate our special day with us.",
                     aboveform: "If you want send a short message to us, please use the box below. Click the button below to finalise your RSVP.",
+                    finish: "Finish"
                 }
             }
         },
@@ -261,13 +266,13 @@ module.exports = {
                     arrive: {
                         question: "A que horas devo chegar?",
                         answer: {
-                            Day: "Chegue entre 14h15 e 14h45, pois a cerimônia começará pontualmente às 15h.",
+                            Day: "Chegue entre 14h30 e 14h45, pois a cerimônia começará pontualmente às 15h.",
                             Evening: "Chegue a partir das 17h."
                         }
                     },
                     rsvp: {
                         question: "Quando preciso confirmar minha presença?",
-                        answer: "Responda aqui </a> usando o formulário em nosso site até"
+                        answer: "Responda aqui </a> usando o formulário em nosso site até "
                     },
                     transport: {
                         question: "Como chegar ao local",
@@ -278,28 +283,27 @@ module.exports = {
 
                         {
                             question: "Posso levar meu filho?",
-                            answer: "Preferimos que você festeje conosco e não tenha que se preocupar com seu filho. Se você não conseguir encontrar um cuidador, o local permitirá um pequeno número de crianças. Por favor, discuta isso conosco com antecedência se você precisar trazer seu filho, pois gostaríamos de manter os números ao mínimo"
+                            answer: "Preferimos que você festeje conosco e não tenha que se preocupar com seu filho. Se você não conseguir encontrar um cuidador, o local permitirá um número limitado de crianças. Por favor, nos avise com antecedência se você for trazer seu filho, pois gostaríamos de manter os números ao mínimo"
                         },
                         {
                             question: "Posso tirar fotos?",
-                            answer: "Sim! Sinta-se à vontade para tirar quantas fotos e vídeos quiser. Tudo o que pedimos é que você compartilhe tudo o que filmar conosco."
+                            answer: "Sim! Sinta-se à vontade para tirar quantas fotos e vídeos quiser. Tudo o que pedimos é que você compartilhe filmes e fotos conosco."
                         },
                         {
                             question: "Posso postar nas redes sociais?",
                             answer: "Sim. Apenas certifique-se de que ficamos bem em suas postagens!"
                         },
                         {
-                            question: "Qual é o código de vestimenta?",
+                            question: "Qual é o código de vestimento?",
                             answer: "Cocktail / casual elegante. Somos um casal descontraído e nosso casamento reflete isso. Apenas se vista para uma noite divertida de dança e comemoração conosco!"
                         },
                         {
                             question: "Posso trazer um acompanhante?",
-                            answer: "Todos os acompanhantes já foram considerados como parte da lista de convidados do convite. Se você quiser trazer outro convidado, avise-nos, mas talvez não possamos acomodá-lo."
-
+                            answer: "Todos os acompanhantes já foram considerados como parte da lista de convidados. Se você quiser trazer outro convidado, avise-nos, mas talvez não será possível."
                         },
                         {
                             question: "Tem um guarda-volumes?",
-                            answer: "The Little Yellow Door não tem um guarda-volumes. No entanto, reservamos todo o local e haverá lugares para guardar seus pertences. Use o bom senso e seja responsável por seus próprios pertences."
+                            answer: "The Little Yellow Door não tem um guarda-volumes. Vocé será responsável por seus próprios pertences."
                         },
                         {
                             question: "A que horas termina a recepção?",
@@ -307,7 +311,7 @@ module.exports = {
                         },
                         {
                             question: "A comida e a bebida serão fornecidas?",
-                            answer: "Sim. Forneceremos uma variedade de opções de comida e bebida durante a noite</p><p>Não será um assunto sentado, a comida sendo canapés e tigelas de comida</p><p>O local também possui uma variedade de outras opções de bebidas, incluindo adoráveis coquetéis, que podem ser comprados através deles."
+                            answer: "Sim. Forneceremos uma variedade de opções de comida e bebida durante a noite</p><p>Será uma recepção infomal</p><p>O local também possui uma variedade de outras opções de bebidas, incluindo deliciosos coquetéis, que podem ser comprados através deles."
                         },
                         {
                             question: "O bar aceita dinheiro?",
@@ -320,8 +324,8 @@ module.exports = {
                     ]
                 },
                 gifting: {
-                    contribute: "Contribua para a nossa lua de mel",
-                    details: "<p>O presente mais importante para nós é ter vocês a partilhar o nosso dia, por isso não se preocupem em nos oferecer nada.</p><p>No entanto, se quiserem contribuir para a nossa lua de mel, temos várias opções que podem encontrar abaixo.</p>"
+                    contribute: "Contribue para a nossa lua de mel",
+                    details: "<p>O presente mais importante para nós é a sua presença, por isso não se preocupem em nos oferecer nada.</p><p>No entanto, se quiserem contribuir com a nossa lua de mel, temos várias opções que podem encontrar abaixo.</p>"
                 },
                 inviteheader: {
                     aregettingmarried: 'vão se casar',
@@ -331,9 +335,10 @@ module.exports = {
                     thankyouforupdatingyourrsvp: 'Obrigado por enviar seu RSVP. Por favor, <a href="/contact">envie-nos uma mensagem</a> se você precisar fazer alguma alteração',
                     updateyourrsvp: 'Atualize seu RSVP',
                     youcanupdateyourrsvipuntil: 'Você pode atualizar seu RSVP até',
+                    rsvpby: "31 de Março de 2024"
                 },
                 ourstory: {
-                    story: "<p>Samires e Simon se conheceram de uma maneira moderna, online e tiveram seu primeiro encontro em 3 de junho de 2017 no The Porterhouse em Covent Garden. Não foi o encontro mais chique, já que foram pints e Samires aproveitando um hambúrguer Five Guys (que são enormes e desleixados) pela primeira vez. Nos divertimos tanto que não percebemos que 5 horas haviam passado.</p> <p>Simon fez o pedido durante a primeira viagem deles ao Brasil juntos em 25 de setembro de 2022. Samires sabia que o pedido estava chegando durante a viagem, mas ainda ficou surpresa, especialmente porque ele falou em português muito quebrado. Ele também conseguiu escolher um lugar bonito perto de uma cachoeira em Itacaré.</p> <p>No nosso 7º aniversário, vamos nos casar e mal podemos esperar para compartilhar nosso dia especial com você.</p>"
+                    story: "<p>Samires e Simon se conheceram de uma maneira moderna, online e tiveram seu primeiro encontro em 3 de junho de 2017 no bar 'The Porterhouse' em Covent Garden. Não foi um encontro muito romântico. Tomamos cervejas e depois fomos comer hambúrgueres no Five Guys (Famosos pelos seus sanduiches enormes e deliciosos). Nos divertimos tanto que não percebemos que 5 horas haviam passado.</p> <p>Depois de mais de cinco anos juntos e dois gatos, Simon fez o pedido de casamento durante a nossa primeira viagem ao Brasil em 25 de setembro de 2022. Samires sabia que o pedido seria durante a viagem, mas ainda ficou surpresa, especialmente porque ele fez o pedido em português. Ele escolheu um lugar bem romântico debaixo de uma cachoeira em Itacaré.</p> <p>No nosso 7º aniversário juntos, vamos nos casar e estamos muito felizes de compartilhar nosso dia especial com vocês.</p>"
                 },
                 orderoftheday: {
                     ceremony: "Cerimônia",
@@ -382,7 +387,7 @@ module.exports = {
                 },
                 gifting: {
                     gifting: 'Presentes',
-                    message: "Sua presença em nosso dia especial é tudo o que desejamos. Porém, se você quiser dar um presente, ficaremos muito gratos por qualquer contribuição para experiências em nossa lua de mel. Estamos planejando uma viagem ao Japão com muito saquê e ramen para consumir. Se quiser comprar-nos uma refeição, pode usar um dos métodos abaixo",
+                    message: "Sua presença em nosso dia especial é tudo o que desejamos. Porém, se você quiser dar um presente, ficaremos muito gratos por qualquer contribuição para ser usada na nossa lua de mel. Estamos planejando uma viagem para o Japão com muita comida e bebida para consumir. Se quiser contribuir, pode usar um dos métodos abaixo",
                     contributewithpot: 'Contribua com Collection Pot',
                     potsubtext: '(Cartões de débito / crédito)',
                     contributewithmonzo: 'Contribua com Monzo',
@@ -432,9 +437,10 @@ module.exports = {
                     ceremony: "Cerimônia",
                     ceremonytube: "Estação de metrô mais próxima: Sloane Square (linhas Circle e District)",
                     reception: "Recepção",
-                    receptiontube: "Estação de metrô mais próxima: Westbourne Park (linhas Circle e Hammersmith &amp; City)",
+                    receptiontube: "Estação de metrô mais próxima: <br>Westbourne Park (linhas Circle e Hammersmith &amp; City) 8 minutos a pé <br>Ladbroke Grove (linhas Circle) 9 minutos a pé <br>Notting Hill Gate ( linhas Circle, Distrinct e Central) 16 minutos a pé",
                     gettingfromceremonytoreception: "Como chegar da cerimônia à recepção",
                     bybus: "De ônibus",
+                    bus: "Ônibus",
                     bybusdetails: "<li>Pegue o ônibus 49 na Sydney Street Chelsea Old Town Hall (parada KH) até Queensberry Place</li> <li>Pegue o ônibus 70 na Queensberry Place (parada V) até Powis Gardens</li><li>Caminhe até The Little Yellow Door</li>",
                     uber: "Uber (custo estimado: £10-15)"
                 }
@@ -445,12 +451,13 @@ module.exports = {
                     gifting: 'Presentes',
                     orderofevents: 'Ordem dos Eventos',
                     ourstory: 'Nossa História',
-                    transportandaccommodation: 'Transporte &amp; Acomodação',
+                    transportandaccommodation: 'Transporte',
                     whereandwhen: 'Onde &amp; Quando',
                 },
                 rsvp: {
                     hopeyoucancome: "Esperamos muito que você possa celebrar conosco!",
                     title: "Confirme sua presença",
+                    confirmattendance: "confirme sua presença",
                     yourguest: "Seu convidado",
                     bringingaguest: "Eu vou levar um convidado",
                     notbringingaguest: "Eu não vou levar um convidado",
@@ -461,17 +468,19 @@ module.exports = {
                     rsvptocontinue: "Por favor, selecione sua confirmação de presença para continuar",
                     guestnametocontinue: "Por favor, digite o nome completo do seu convidado para continuar",
                     dietaryrequirements: "Necessidades dietéticas",
-                    lcdietaryrequirements: "necessidades dietéticas",
+                    lcdietaryrequirementsen: "",
+                    lcdietaryrequirementspt: "Necessidades dietéticas de",
                     letknowdietaryrequirements: "Por favor, informe-nos se você tem alguma restrição alimentar ou alergia",
                     confirm: "Confirmar",
                     uhoh: "Uh oh, algo deu errado",
                     pleasetryagain: 'Por favor, tente novamente, ou <a href="/pt/contact">entre em contato conosco</a> se ainda não conseguir confirmar sua presença'
                 },
                 rsvpthankyou: {
-                    thankyou: "Obrigado!",
-                    messageyes: "Estamos muito animados por você celebrar nosso dia especial conosco!",
+                    thankyou: "Obrigado",
+                    messageyes: "Estamos muito felizes por você celebrar nosso dia especial conosco!",
                     messageno: "Sentimos muito que você não possa celebrar nosso dia especial conosco.",
-                    aboveform: "Se quiser enviar uma mensagem curta para nós, use a caixa abaixo. Clique no botão abaixo para finalizar sua confirmação de presença.",
+                    aboveform: "Se quiser nos enviar uma mensagem, use a caixa abaixo. Clique no botão abaixo para finalizar sua confirmação de presença.",
+                    finish: "Finalizar",
                 },
                 rsvpcomplete: {
                     thankyou: "Obrigado",

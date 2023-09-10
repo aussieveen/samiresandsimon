@@ -1,4 +1,24 @@
+{% assign sizes = "(min-width: 790px) 86px, 138px" %}
+{% assign widths = "30" %}
+
 <div class = "languageOptions" data-module="translate">
-    <a class="js-en-flag">English</a>
-    <a class="js-pt-flag">Português</a>
+    {% assign urlpath = page.url | split: "/"  %}
+    {% if page.url contains '/pt/' %}
+        {% assign pturlpath = page.url %}
+        {% assign enurlpath = page.url | remove: "/pt"  %}
+    {% else %}
+        {% assign enurlpath = page.url %}
+        {% assign pturlpath = page.url | prepend: "/pt" %}
+    {% endif %}
+    <a href = "{{ enurlpath }}" class="flag">{% render "components/atoms/image",
+                url: "./src/assets/images/ukflag.png",
+                alt: "Go to english version",
+                sizes: sizes,
+                widths: widths
+        %}</a>           <a href = "{{ pturlpath }}" class="flag">{% render "components/atoms/image",
+                url: "./src/assets/images/brazilflag.png",
+                alt: "Go to portuguese version",
+                sizes: sizes,
+                widths: widths
+            %}</a>
 </div>

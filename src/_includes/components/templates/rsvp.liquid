@@ -51,7 +51,7 @@
             <fieldset class="form__fieldset js-rsvp-select">
               <div class="form__fieldset-title">
                 <h3 class="heading-3">
-                  {{ person['Name'] }}'s {{ languages[page.lang].components.templates.rsvp.title }}
+                  {{ person['Name'] }}{% if page.lang == 'en' %}'s{% endif %}{% if page.lang == 'pt' %},{% endif %} {{ languages[page.lang].components.templates.rsvp.confirmattendance }}
                 </h3>
               </div>
               <div class="form__field">
@@ -121,7 +121,7 @@
 
             <div class="js-meal-{{ person.id }}-attend">
               <div class="form__fieldset-title">
-              <h3 class="heading-3">{{ person['Name'] }}'s {{ languages[page.lang].components.templates.rsvp.lcdietaryrequirements }}</h3>
+              <h3 class="heading-3">{{ languages[page.lang].components.templates.rsvp.lcdietaryrequirementspt }} {{ person['Name'] }}{% if page.lang == 'en' %}'s {% endif %}{{ languages[page.lang].components.templates.rsvp.lcdietaryrequirementsen }}</h3>
                 </div>
               <fieldset class="form__fieldset{% if person['Plus1'] == true %} js-guest-meal-select{% endif %}">
                 {% capture field_name %}{{person.id}}-dietary{% endcapture %}
