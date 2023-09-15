@@ -51,7 +51,7 @@ module.exports = async function () {
           "people": inviteGuests,
           formatted_deadline: `${deadline.toFormat('d')}${getNumberSuffix(deadline.toFormat('d'))} ${deadline.toFormat('MMMM')}`,
           formatted_deadline_with_year: `${deadline.toFormat('d')}${getNumberSuffix(deadline.toFormat('d'))} ${deadline.toFormat('MMMM yyyy')}`,
-          within_deadline: DateTime.now() <= deadline.endOf('day'),
+          within_deadline: true,
         };
       }
     ));

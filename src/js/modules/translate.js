@@ -2,7 +2,7 @@ import {hide, show} from '../utils';
 
 export function init() {
     console.log("Translate JS loaded");
-    const enFlag = document.querySelector('.js-en-flag');
+/*    const enFlag = document.querySelector('.js-en-flag');
     const ptFlag = document.querySelector('.js-pt-flag');
     const en = document.querySelectorAll('.js-en');
     const pt = document.querySelectorAll('.js-pt');
@@ -53,5 +53,5 @@ export function init() {
         for (const el of en) {
             hide(el);
         }
-    }
+    }*/
 }

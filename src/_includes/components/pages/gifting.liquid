@@ -60,6 +60,10 @@
             </details>
         {% endfor %}
 
+        {% render "components/molecules/homelink",
+            page:page,
+            languages:languages
+        %}
     </div>
 
 {% endblock %}

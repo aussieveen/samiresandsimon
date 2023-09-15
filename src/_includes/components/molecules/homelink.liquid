@@ -1,0 +1,8 @@
+<div class="home__link" data-module="homelink">
+    {% assign url = '/' | parseUrl : page.lang %}
+    {% render "components/atoms/call-to-action",
+            url: "javascript:history.back()",
+            text: languages[page.lang].components.molecules.homelink.text,
+            class: 'home__link__cta'
+    %}
+</div>

@@ -37,6 +37,12 @@ if (dynamicModules.includes('translate')) {
     });
 }
 
+if (dynamicModules.includes('homelink')) {
+    import("./modules/homelink").then(function (homelink) {
+        homelink.init();
+    });
+}
+
 if (dynamicModules.includes('check-saved')) {
     const cookieValue = document.cookie
         .split('; ')

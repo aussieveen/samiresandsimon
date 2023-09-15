@@ -9,6 +9,9 @@ module.exports = {
                     dayofweek: 'Monday',
                     day: "3<sub>rd</sub>",
                     monthyear: "June 2024",
+                },
+                homelink: {
+                    text: 'Back to home',
                 }
             },
             organisms: {
@@ -89,7 +92,8 @@ module.exports = {
                     thankyouforupdatingyourrsvp: 'Thank you for submitting your RSVP. Please <a href="/contact">send us a message</a> if you need to make any changes.',
                     updateyourrsvp: 'Update your RSVP',
                     youcanupdateyourrsvipuntil: 'You can update your RSVP until',
-                    rsvpby: "31st March 2024"
+                    rsvpby: "31st March 2024",
+                    pleasersvpby: "Please RSVP by",
                 },
                 ourstory: {
                     story: "<p>Samires and Simon met the modern way, online and had their first date on 3rd June 2017 at The Porterhouse in Covent Garden. It wasn't the most fancy dates given it was pints and Samires' enjoying a Five Guys burger (which are massive and sloppy) for the first time. We enjoyed ourselves so much that we didn't realise that 5 hours had passed.</p> <p>After over five years together, Simon popped the question during their first trip to Brazil together on 25th September 2022. Samires' knew the proposal was coming during the trip but was still surprised, especially since he spoke in very broken portugese. He also managed to pick a beautiful spot by a waterfall in Itacare.</p> <p>On our 7th year anniversary, we will be tying the knot and we cannot wait to share our special day with you.</p>"
@@ -255,6 +259,9 @@ module.exports = {
                     dayofweek: 'Segunda-feira,',
                     day: "3",
                     monthyear: "de junho de 2024",
+                },
+                homelink: {
+                    text: 'Voltar para a página inicial',
                 }
             },
             organisms: {
@@ -319,7 +326,7 @@ module.exports = {
                         },
                         {
                             question: "Tenho uma pergunta que não foi respondida&hellip;",
-                            answer: "Tudo bem, basta nos enviar uma mensagem em nossa <a href='/contact'>página de contato</a> e entraremos em contato com você."
+                            answer: "Tudo bem, basta nos enviar uma mensagem em nossa <a href='/pt/contact'>página de contato</a> e entraremos em contato com você."
                         }
                     ]
                 },
@@ -335,7 +342,8 @@ module.exports = {
                     thankyouforupdatingyourrsvp: 'Obrigado por enviar seu RSVP. Por favor, <a href="/contact">envie-nos uma mensagem</a> se você precisar fazer alguma alteração',
                     updateyourrsvp: 'Atualize seu RSVP',
                     youcanupdateyourrsvipuntil: 'Você pode atualizar seu RSVP até',
-                    rsvpby: "31 de Março de 2024"
+                    rsvpby: "31 de Março de 2024",
+                    pleasersvpby: "Por favor, confirme sua presença até",
                 },
                 ourstory: {
                     story: "<p>Samires e Simon se conheceram de uma maneira moderna, online e tiveram seu primeiro encontro em 3 de junho de 2017 no bar 'The Porterhouse' em Covent Garden. Não foi um encontro muito romântico. Tomamos cervejas e depois fomos comer hambúrgueres no Five Guys (Famosos pelos seus sanduiches enormes e deliciosos). Nos divertimos tanto que não percebemos que 5 horas haviam passado.</p> <p>Depois de mais de cinco anos juntos e dois gatos, Simon fez o pedido de casamento durante a nossa primeira viagem ao Brasil em 25 de setembro de 2022. Samires sabia que o pedido seria durante a viagem, mas ainda ficou surpresa, especialmente porque ele fez o pedido em português. Ele escolheu um lugar bem romântico debaixo de uma cachoeira em Itacaré.</p> <p>No nosso 7º aniversário juntos, vamos nos casar e estamos muito felizes de compartilhar nosso dia especial com vocês.</p>"
