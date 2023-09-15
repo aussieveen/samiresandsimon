@@ -33,9 +33,8 @@
                             text: languages[page.lang].components.organisms.inviteheader.updateyourrsvp
                         %}
                     </div>
-                    <h4 class="heading-4">
-                        {{ languages[page.lang].components.organisms.inviteheader.youcanupdateyourrsvipuntil }}
-                        {{ languages[page.lang].components.organisms.inviteheader.rsvpby }}</h4>
+                    <h4 class="heading-4 js-rsvp-text" data-alt="{{ languages[page.lang].components.organisms.inviteheader.youcanupdateyourrsvipuntil }} {{ languages[page.lang].components.organisms.inviteheader.rsvpby }}">
+                    </h4>
 
                 {% else %}
 
@@ -46,7 +45,7 @@
                             class: "js-rsvp"
                         %}
                     </div>
-                    <h4 class="heading-4 js-rsvp-text" data-alt="You can update your RSVP until {{ invite.formatted_deadline }}">{{ languages[page.lang].components.organisms.inviteheader.pleasersvpby }} {{ languages[page.lang].components.organisms.inviteheader.rsvpby }}</h4>
+                    <h4 class="heading-4">{{ languages[page.lang].components.organisms.inviteheader.pleasersvpby }} {{ languages[page.lang].components.organisms.inviteheader.rsvpby }}</h4>
                 {% endif %}
             {% else %}
                 <div class="invite-header__cta">

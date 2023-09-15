@@ -97,7 +97,7 @@ module.exports = {
                     pleasersvpby: "Please RSVP by",
                 },
                 ourstory: {
-                    story: "<p>Samires and Simon met the modern way, online and had their first date on 3rd June 2017 at The Porterhouse in Covent Garden. It wasn't the most fancy dates given it was pints and Samires' enjoying a Five Guys burger (which are massive and sloppy) for the first time. We enjoyed ourselves so much that we didn't realise that 5 hours had passed.</p> <p>After over five years together, Simon popped the question during their first trip to Brazil together on 25th September 2022. Samires' knew the proposal was coming during the trip but was still surprised, especially since he spoke in very broken portugese. He also managed to pick a beautiful spot by a waterfall in Itacare.</p> <p>On our 7th year anniversary, we will be tying the knot and we cannot wait to share our special day with you.</p>"
+                    story: "<p>Samires and Simon met the modern way, online and had their first date on 3rd June 2017 at The Porterhouse in Covent Garden. It wasn't the most fancy of dates given it was pints and Samires' enjoying a Five Guys burger (which are massive and sloppy) for the first time. We enjoyed ourselves so much that we didn't realise that 5 hours had passed.</p> <p>After over five years together, Simon popped the question during our first trip to Brazil together on 25th September 2022. Samires' knew the proposal was coming during the trip but was still surprised, especially since he spoke in very broken portuguese. He also managed to pick a beautiful spot by a waterfall in Itacare.</p> <p>On our 7th year anniversary, we will be tying the knot, and we cannot wait to share our special day with you.</p>"
                 },
                 orderoftheday: {
                     ceremony: "Ceremony",
@@ -121,7 +121,7 @@ module.exports = {
                     }
                 },
                 transport: {
-                    details: "<p>Having both the ceremony and reception in central London, there a variety of transport options to getting to and from each venue.</p> <p>Please click <a href='",
+                    details: "<p>Having both the ceremony and reception in central London, there are variety of transport options to getting to and from each venue.</p> <p>Please click <a href='",
                     details2: "'>here</a> to find details and links of recommended ways to get around!</p>"
                 },
                 whereandwhen: {
