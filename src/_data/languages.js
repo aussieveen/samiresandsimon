@@ -180,8 +180,8 @@ module.exports = {
                 },
                 login: {
                     login: 'Login',
-                    entercode: 'Please enter the code on your invite to get started',
-                    codeplaceholder: "e.g. SAMSIM2024",
+                    entercode: 'Please enter the code on your invite to get started. It will be lowercase and contain no spaces',
+                    codeplaceholder: "e.g. samsim2024",
                     submit: 'Get started',
                     help: "Your invite code is included on your invite, for example samiresandsimon.co.uk/AB1. If you can't find your code, or can't login with it, just <a href='/contact'>let us know</a>.",
                     couldnotfindheader: "Uh oh, we couldn't find your invite",
@@ -433,7 +433,7 @@ module.exports = {
                 },
                 login: {
                     login: "Conecte-se",
-                    entercode: "Por favor, insira o código do seu convite para começar",
+                    entercode: "Por favor, insira o código do seu convite para começar. Ele estará em minúsculas e não conterá espaços.",
                     codeplaceholder: "por exemplo SAMSIM2024",
                     submit: 'Começar',
                     help: "O código do seu convite está incluído no seu convite, por exemplo samiresandsimon.co.uk/AB1. Se você não conseguir encontrar seu código ou não conseguir fazer login com ele, basta <a href='/pt/contact'>nos informar</a>.",
