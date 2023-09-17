@@ -250,7 +250,8 @@ export function init() {
                 console.error(error);
             });
     };
-    
+
+
     const setEventHandlers = () => {
         // show continue button
         rsvpSelects.forEach((select) => {
