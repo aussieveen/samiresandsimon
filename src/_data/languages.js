@@ -194,7 +194,7 @@ module.exports = {
                     ceremony: "Ceremony",
                     ceremonytube: "Nearest Tube: Sloane Square (Circle and District Lines)",
                     reception: "Reception",
-                    receptiontube: "Nearest Tube: Westbourne Park (Circle, Hammersmith &amp; City lines)",
+                    receptiontube: "Nearest Tube: Westbourne Park (Circle, Hammersmith &amp; City lines) - 8 min walk<br>Notting Hill (Central, Circle and District Lines) - 9 min walk<br>Ladbroke Grove (Circle Line) - 16 min walk",
                     gettingfromceremonytoreception: "Getting from the ceremony to the reception",
                     bybus: "By Bus",
                     bus: "Bus",
