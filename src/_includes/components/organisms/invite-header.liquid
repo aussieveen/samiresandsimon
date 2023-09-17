@@ -20,7 +20,6 @@
                     {% if forloop.last and forloop.length > 1 %} &amp; {% endif %}
                         {{- person['Name'] -}}
                     {% if forloop.last == false and forloop.rindex > 2 %}, {% endif %}
-                    {%- if forloop.last and forloop.length > 1 -%}!{%- endif -%}
                 {%- endfor -%}
             </h3>
 
