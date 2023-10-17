@@ -39,7 +39,7 @@ module.exports = {
                     qas:[
                         {
                             question: "Can I bring my child?",
-                            answer: "We would prefer that you party the night away with us and not have to worry about your child. If you are unable to find child-care, the venue will allow a small number of children. Please discuss this with us beforehand if you need to bring your child as we would like to keep the numbers to a minimum"
+                            answer: "Children will only be permitted until 7pm as the venue is a 21+ venue and they are restricted by their license."
                         },
                         {
                             question: "Can I take photos?",
@@ -291,7 +291,7 @@ module.exports = {
 
                         {
                             question: "Posso levar meu filho?",
-                            answer: "Preferimos que você festeje conosco e não tenha que se preocupar com seu filho. Se você não conseguir encontrar um cuidador, o local permitirá um número limitado de crianças. Por favor, nos avise com antecedência se você for trazer seu filho, pois gostaríamos de manter os números ao mínimo"
+                            answer: "As crianças só serão permitidas até as 19h, pois o local é um local para maiores de 21 anos e eles são restritos pela licença."
                         },
                         {
                             question: "Posso tirar fotos?",
